@@ -35,5 +35,19 @@
 */
 
 string taskX(int number) {
-	return "error";
+	string msg = "";
+	if(number < 0){
+		return "error";
+	}
+
+	number = number > 86400 ? number - 86400 * (number / 86400) : number;
+
+	msg += to_string(number / 3600) + ":";
+	number -= 3600 * (number / 3600);
+
+	msg += number / 60 < 10 ? "0" + to_string(number / 60) + ":" : to_string(number / 60) + ":";
+	msg += number - 60 * (number / 60) < 10 ? "0" + to_string(number - 60 * (number / 60)) : 
+		to_string(number - 60 * (number / 60));
+
+	return msg;
 }
