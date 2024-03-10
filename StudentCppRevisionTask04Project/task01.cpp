@@ -34,5 +34,5 @@
 */
 
 int task01(int a, int b, int c) {
-	return 0;
+	return a > 0 && b > 0 && c > 0 ? (a / 2 + a % 2) + (b / 2 + b % 2) + (c / 2 + c % 2) : 0;
 }
